@@ -1,12 +1,18 @@
 import { zodResolver } from '@hookform/resolvers/zod';
 import { isAxiosError } from 'axios';
 import { useForm } from 'react-hook-form';
-import { Alert, Text, View } from 'react-native';
+import { Alert, Text, TouchableOpacity, View } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+import type { NativeStackNavigationProp } from '@react-navigation/native-stack';
 import { Button, FormField, ScreenContainer } from '@/components';
 import { useLogin } from '@/features/auth/hooks/useLogin';
 import { loginSchema, type LoginFormData } from '@/features/auth/schemas/login.schema';
+import type { AuthStackParamList } from '@/navigation/AuthNavigator';
+
+type Nav = NativeStackNavigationProp<AuthStackParamList, 'Login'>;
 
 export function LoginScreen() {
+  const navigation = useNavigation<Nav>();
   const { mutate: login, isPending } = useLogin();
 
   const { control, handleSubmit } = useForm<LoginFormData>({
@@ -72,7 +78,10 @@ export function LoginScreen() {
         </View>
 
         {/* Footer */}
-        <View className="mt-8 items-center">
+        <View className="mt-8 items-center gap-3">
+          <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
+            <Text className="text-sm text-sage-600">Esqueci minha senha</Text>
+          </TouchableOpacity>
           <Text className="text-sm text-gray-400">
             Espaços confortáveis para você trabalhar com calma.
           </Text>

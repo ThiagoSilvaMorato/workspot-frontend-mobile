@@ -20,4 +20,10 @@ export const authApi = {
   // O backend usa DELETE com Bearer auth obrigatório no header
   logout: (refreshToken: string) =>
     api.delete('/auth/logout', { data: { refreshToken } }),
+
+  forgotPassword: (data: { email: string }) =>
+    api.post<ApiResponse<{ message: string }>>('/auth/forgot-password', data),
+
+  resetPassword: (data: { token: string; newPassword: string }) =>
+    api.post<ApiResponse<{ message: string }>>('/auth/reset-password', data),
 };
