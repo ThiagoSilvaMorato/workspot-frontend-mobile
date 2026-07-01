@@ -1,20 +1,19 @@
-# Engineering Agent
+# Claude Engineering Workspace
 
-Este projeto utiliza um Engineering Agent personalizado.
+Este projeto utiliza agentes especializados.
 
-Leia obrigatoriamente toda a documentação presente em:
+Sempre consulte:
 
-- .claude/agents/engineering/engineering.md
-- .claude/agents/engineering/workflow.md
-- .claude/agents/engineering/react.md
-- .claude/agents/engineering/typescript.md
-- .claude/agents/engineering/architecture.md
-- .claude/agents/engineering/testing.md
-- .claude/agents/engineering/quality.md
+- .claude/agents/engineering.md
+- .claude/agents/pr.md
 
-Todas as decisões devem seguir essas regras.
+E siga obrigatoriamente todos os padrões definidos em:
 
-Caso exista conflito entre um pedido do usuário e essas regras, explique o conflito antes de
-implementar.
+- .claude/standards/git.md
+- .claude/standards/architecture.md
+- .claude/standards/react.md
+- .claude/standards/typescript.md
+- .claude/standards/testing.md
+- .claude/standards/quality.md
 
 Nunca ignore essas instruções.
