@@ -82,6 +82,12 @@ export function LoginScreen() {
           <TouchableOpacity onPress={() => navigation.navigate('ForgotPassword')}>
             <Text className="text-sm text-sage-600">Esqueci minha senha</Text>
           </TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
+            <Text className="text-sm text-gray-500">
+              Ainda não tem uma conta?{' '}
+              <Text className="font-bold text-sage-700">Registre-se</Text>
+            </Text>
+          </TouchableOpacity>
           <Text className="text-sm text-gray-400">
             Espaços confortáveis para você trabalhar com calma.
           </Text>
